@@ -1,0 +1,380 @@
+$colors: (
+  "white": #e9e9e9,
+  "black": #000,
+  "red": #e25662,
+  "gray": #7b7a7a,
+  "beige": #e0c8a2,
+  "brown": #8f6659,
+  "pink": #f8b3bd,
+  "navy": #4e73b0,
+  "blue": #628eda,
+  "green": #51b08e,
+  "yellow": #fad74a,
+  "orange": #ef9335,
+  "gold": #e6c548,
+  "silver": #bfbebe
+);
+.product-other-market {
+  .product-info {
+    .title {
+      min-height: 1.5em;
+    }
+  }
+}
+
+.paypay-categories {
+  .title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 40px;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+    padding: 8px 25px;
+    color: $black;
+    background-color: $white;
+
+    img {
+      width: 35px;
+    }
+  }
+
+  a {
+    width: 80%;
+
+    @media #{$md, $xs, $sm} {
+      width: 100%;
+    }
+  }
+
+  li {
+    margin: 1.5em 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.paypay-product {
+  .title {
+    height: 1.5em;
+  }
+}
+
+.product-recommend {
+  .product-info {
+    padding: 10px;
+
+    .title {
+      min-height: 2.5rem;
+      margin: 0;
+    }
+
+    .price {
+      margin: 0px;
+    }
+  }
+}
+
+.rakuten-description {
+  color: $black;
+  h1 {
+    font-size: 2em;
+  }
+  .section_01,
+  .section_02,
+  .section_03,
+  .section_04,
+  .section_05 {
+    margin: 2em 1em;
+    display: flex;
+    justify-content: center;
+  }
+
+  .left {
+    display: flex;
+    align-content: space-around;
+    flex-direction: column;
+  }
+  .left,
+  .right {
+    margin: 0 1em;
+    img {
+      padding: 1em;
+    }
+  }
+  .condition {
+    width: 370px;
+    margin-left: 15px;
+    .rank {
+      overflow: hidden;
+      margin: 15px 0 10px;
+      .image {
+        width: 130px;
+        float: left;
+      }
+      .text {
+        width: 240px;
+        float: left;
+        h4 {
+          margin: 20px 0 0 20px;
+          font-size: 150%;
+        }
+        p {
+          margin: 15px 0 0 20px;
+        }
+      }
+    }
+  }
+
+  .btn {
+    display: none;
+  }
+
+  .info {
+    margin: 2em 0;
+    h3 {
+      margin-bottom: 1em;
+    }
+
+    .caution {
+      margin: 2em 0;
+      color: $theme-color;
+      h3 {
+        color: red;
+      }
+    }
+
+    .about {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 2;
+      text-indent: 16px;
+      text-align: center;
+      a {
+        display: block;
+        border: 4px solid #bbb;
+        font-size: 16px;
+        font-weight: bold;
+        text-indent: 16px;
+        background: #ffffff;
+        margin: 0 auto;
+        color: #fff;
+        border-radius: 4px;
+        text-align: center;
+        color: #444444 !important;
+        text-decoration: none;
+        box-sizing: border-box;
+        width: 85%;
+        height: 60px;
+        line-height: 52px;
+      }
+    }
+  }
+}
+
+.form-group {
+  margin-top: 20px;
+
+  &.color-option {
+
+    .single-checkbox {
+      margin-top: 8px;
+      display: inline-block;
+      margin-right: 0.5em;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      label {
+        font-size: 1.2em;
+        margin-bottom: 0;
+        position: relative;
+        bottom: -2px;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      input[type="checkbox"] + label span {
+        border-color: $theme-color;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        margin: 0 5px -3px 0;
+        border: 1px solid #d5d5d5;
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: 50%;
+          width: 22px;
+          height: 22px;
+          transition: all 0.4s ease;
+          transform: scale(0);
+          font-size: 10px;
+          line-height: 1.2;
+          background-color: $theme-color;
+          font-family: "Lineicons";
+          content: "\ea5b";
+          padding-left: 0px;
+          padding-top: 5px;
+          border-radius: 50%;
+          margin-top: -11px;
+          margin-left: -11px;
+          text-align: center;
+        }
+      }
+
+      @each $colorName, $colorHex in $colors {
+        &.checkbox-style-#{$colorName} {
+          input[type="checkbox"] + label span {
+            border: 2px solid $colorHex;
+      
+            &::before {
+              background-color: $colorHex;
+            }
+          }
+        }
+      }
+
+      input[type="checkbox"]:checked + label span {
+        border-color: transparent;
+      }
+
+      input[type="checkbox"]:checked + label span::before {
+        transform: scale(1);
+        border-radius: 50%;
+        color: $white;
+      }
+
+      input {
+        &:focus {
+            outline: 0;
+        }
+    }
+    }
+  }
+
+}
+
+.supplier {
+  padding: 1em;
+  margin: 0.5em 0 1em 0;
+  border-radius: 5px;
+  display: flex;
+  h6 {
+    font-size: 1.125em;
+  }
+  
+  &:hover {
+    background-color: #F2F4F8;
+    cursor: pointer;
+  }
+}
+
+.market-category {
+  margin: 2rem 0;
+  .banner {
+    width: 100%;
+    margin: 3em 0;
+  }
+  .title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-weight: 600;
+
+    img {
+      max-width: 140px;
+      max-height: 32px;
+    }
+    
+
+    strong {
+      color: $black;
+      margin-left: 1em;
+      font-size: 1.25em;
+    }
+    span {
+      margin-left: 1em;
+      color: $theme-color;
+
+      &:hover {
+        cursor: pointer;
+        color: $black;
+      }
+    }
+   
+  }
+
+  .text {
+    margin: 1em 0 1.5em 0;
+    color: $black
+  }
+
+  .line-category {
+    height: 8px;
+  }
+}
+
+.other-market-carousel {
+  margin-bottom: 1em;
+  overflow-x: auto;
+  display: flex;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  
+  img {
+    max-width: 100px;
+    max-height: 32px;
+  }
+
+  .item-carousel {
+    padding: 0.25em 1em;
+    width: 30%;
+    margin-right: 2em;
+    overflow: unset;
+    border-bottom: 2px solid #fff;
+    transition: 0.4s;
+    &:hover {
+      border-bottom: 2px solid $theme-color;
+    }
+
+    
+  }
+  .active {
+    border-bottom: 2px solid red;
+  }
+}
+
+.banner-category {
+  margin-bottom: 3em;
+ img {
+  width: 80%;
+
+  @media #{$md, $xs, $sm} {
+    width: 100%;
+  }
+
+ }
+}
+
+.logo-shop {
+  width: 80%;
+  .img {
+    height: 3.5rem;
+    margin-bottom: 2em;
+  } 
+}
+
+.logo-market {
+  margin-right: 1em;
+  height: 3em;
+}
